@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 772 250" width="772" height="250">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2a44"/>
+      <stop offset="1" stop-color="#3b2a5a"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb36b"/>
+      <stop offset="1" stop-color="#ff6f61"/>
+    </linearGradient>
+    <clipPath id="frame"><rect x="56" y="40" width="250" height="170" rx="14"/></clipPath>
+  </defs>
+  <rect width="772" height="250" fill="url(#bg)"/>
+  <g opacity="0.07" fill="#ffffff">
+    <circle cx="700" cy="30" r="90"/>
+    <circle cx="640" cy="240" r="60"/>
+  </g>
+  <g clip-path="url(#frame)">
+    <rect x="56" y="40" width="250" height="170" fill="url(#sky)"/>
+    <circle cx="216" cy="104" r="26" fill="#fff4dc"/>
+    <path d="M56 210 L136 124 L186 176 L226 138 L306 210 Z" fill="#2b3557"/>
+    <path d="M56 210 L136 124 L162 152 L108 210 Z" fill="#37426b"/>
+  </g>
+  <rect x="56" y="40" width="250" height="170" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="4"/>
+  <rect x="196" y="52" width="98" height="26" rx="5" fill="#11151f" fill-opacity="0.82"/>
+  <text x="245" y="70" font-family="Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.3">AI-generated</text>
+  <text x="350" y="112" font-family="Helvetica Neue, Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff">AI Image Disclosure</text>
+  <text x="350" y="148" font-family="Helvetica Neue, Arial, sans-serif" font-size="17" fill="#ffffff" fill-opacity="0.85">A clear, accessible label for AI-generated images.</text>
+  <text x="350" y="176" font-family="Helvetica Neue, Arial, sans-serif" font-size="15" fill="#ffb36b">CSS only  ·  IPTC &amp; C2PA detection  ·  Block editor</text>
+</svg>

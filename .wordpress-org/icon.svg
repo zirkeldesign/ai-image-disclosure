@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f2a44"/>
+      <stop offset="1" stop-color="#3b2a5a"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb36b"/>
+      <stop offset="1" stop-color="#ff6f61"/>
+    </linearGradient>
+    <clipPath id="frame"><rect x="40" y="56" width="176" height="144" rx="14"/></clipPath>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <g clip-path="url(#frame)">
+    <rect x="40" y="56" width="176" height="144" fill="url(#sky)"/>
+    <circle cx="158" cy="118" r="22" fill="#fff4dc"/>
+    <path d="M40 200 L98 132 L134 170 L164 140 L216 200 Z" fill="#2b3557"/>
+    <path d="M40 200 L98 132 L118 156 L80 200 Z" fill="#37426b"/>
+  </g>
+  <rect x="40" y="56" width="176" height="144" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="5"/>
+  <rect x="150" y="68" width="54" height="30" rx="7" fill="#11151f" fill-opacity="0.82"/>
+  <text x="177" y="90" font-family="Helvetica Neue, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">AI</text>
+</svg>
