@@ -1,0 +1,78 @@
+{
+  "name": "zirkeldesign/ai-image-disclosure",
+  "description": "Label AI-generated images with a small, accessible badge. CSS only, detects IPTC and C2PA provenance on upload.",
+  "license": "GPL-2.0-or-later",
+  "type": "wordpress-plugin",
+  "keywords": [
+    "wordpress",
+    "ai",
+    "ai-generated",
+    "eu-ai-act",
+    "images"
+  ],
+  "authors": [
+    {
+      "name": "zirkel.design",
+      "email": "hello@zirkel.design",
+      "homepage": "https://zirkel.design"
+    },
+    {
+      "name": "Daniel Sturm",
+      "email": "d.sturm@zirkeldesign.de",
+      "homepage": "https://zirkel.design"
+    }
+  ],
+  "homepage": "https://github.com/zirkeldesign/ai-image-disclosure",
+  "support": {
+    "issues": "https://github.com/zirkeldesign/ai-image-disclosure/issues",
+    "source": "https://github.com/zirkeldesign/ai-image-disclosure"
+  },
+  "require": {
+    "php": "^8.3"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.27",
+    "pestphp/pest": "^3.0",
+    "php-stubs/wordpress-stubs": "^6.7",
+    "phpstan/phpstan": "^2.0",
+    "szepeviktor/phpstan-wordpress": "^2.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "ZirkelDesign\\AiImageDisclosure\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ZirkelDesign\\AiImageDisclosure\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    },
+    "platform": {
+      "php": "8.3.0"
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "dist": [
+      "@php -r \"echo '🔨 Building distribution archive...\\n';\"",
+      "composer install --no-dev --optimize-autoloader --quiet",
+      "mkdir -p dist",
+      "@php get-version.php > .version",
+      "wp dist-archive . dist/ai-image-disclosure-$(cat .version).zip",
+      "composer install --quiet",
+      "@php -r \"echo '✅ Distribution archive created: dist/ai-image-disclosure-' . trim(file_get_contents('.version')) . '.zip\\n'; unlink('.version');\""
+    ],
+    "format": "pint",
+    "format:test": "pint --test",
+    "phpstan": "phpstan analyse --memory-limit=1G",
+    "test": "pest",
+    "pcp": "bash bin/plugin-check.sh",
+    "integration": "bash bin/integration-check.sh"
+  }
+}

@@ -1,0 +1,107 @@
+/*
+ * AI Image Disclosure - the label on marked images.
+ *
+ * Positioned by CSS alone, inside the element that frames the image, so it
+ * stays in its corner at every crop and width without any script.
+ *
+ * Restyle with the custom properties below, e.g. in your theme:
+ *   .has-aiid-badge { --aiid-bg: #000; --aiid-font-size: .875rem; }
+ */
+
+:where(.has-aiid-badge) {
+	--aiid-gap: 0.75rem;
+	--aiid-bg: rgb(0 0 0 / 0.6);
+	--aiid-color: #fff;
+	--aiid-font-size: 0.75rem;
+	--aiid-radius: 0.25rem;
+	--aiid-inset: var(--aiid-gap) var(--aiid-gap) auto auto;
+
+	position: relative;
+}
+
+:where(.aiid--top-left) {
+	--aiid-inset: var(--aiid-gap) auto auto var(--aiid-gap);
+}
+
+:where(.aiid--bottom-right) {
+	--aiid-inset: auto var(--aiid-gap) var(--aiid-gap) auto;
+}
+
+:where(.aiid--bottom-left) {
+	--aiid-inset: auto auto var(--aiid-gap) var(--aiid-gap);
+}
+
+/* One class of specificity, so a theme's generic span or figure rules do not unpin it. */
+.aiid-badge {
+	position: absolute;
+	z-index: 2;
+	inset: var(--aiid-inset);
+	padding: 0.25em 0.6em;
+	border-radius: var(--aiid-radius);
+	background: var(--aiid-bg);
+	color: var(--aiid-color);
+	font-size: var(--aiid-font-size);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+	pointer-events: none;
+}
+
+/*
+ * Captioned images: the figure becomes a one-column grid; image (or its link)
+ * and badge share the first cell, the caption takes the second row. The badge
+ * leaves absolute positioning and is placed by alignment within the cell.
+ */
+:where(.aiid--captioned) {
+	--aiid-align: start;
+	--aiid-justify: end;
+}
+
+/* Real specificity: Core sets display: table on aligned images and its own layout on the lightbox. */
+figure.has-aiid-badge.aiid--captioned {
+	display: grid;
+	grid-template-columns: minmax(0, max-content);
+}
+
+/* Aligned figures keep shrinking to their image, as Core's display: table did. */
+figure.has-aiid-badge.aiid--captioned:is(.alignleft, .alignright, .aligncenter) {
+	width: fit-content;
+}
+
+figure.has-aiid-badge.aiid--captioned > * {
+	grid-area: 1 / 1;
+}
+
+/* The caption wraps at the image's width instead of widening the column. */
+figure.has-aiid-badge.aiid--captioned > figcaption {
+	grid-area: 2 / 1;
+	contain: inline-size;
+}
+
+:where(.aiid--captioned.aiid--top-left) {
+	--aiid-justify: start;
+}
+
+:where(.aiid--captioned.aiid--bottom-right) {
+	--aiid-align: end;
+}
+
+:where(.aiid--captioned.aiid--bottom-left) {
+	--aiid-align: end;
+	--aiid-justify: start;
+}
+
+figure.has-aiid-badge.aiid--captioned > .aiid-badge {
+	position: relative;
+	inset: auto;
+	align-self: var(--aiid-align);
+	justify-self: var(--aiid-justify);
+	margin: var(--aiid-gap);
+}
+
+@media (max-width: 400px) {
+	:where(.has-aiid-badge) {
+		--aiid-gap: 0.5rem;
+	}
+}

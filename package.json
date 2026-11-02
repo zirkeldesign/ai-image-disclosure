@@ -1,0 +1,10 @@
+{
+	"name": "@zirkeldesign/ai-image-disclosure",
+	"private": true,
+	"scripts": {
+		"translate": "bun run translate:pot && bun run translate:update && bun run translate:mo",
+		"translate:pot": "php -d error_reporting=22527 $(which wp) i18n make-pot . ./languages/ai-image-disclosure.pot --slug=ai-image-disclosure --domain=ai-image-disclosure --include='ai-image-disclosure.php,src' --exclude='node_modules,vendor,assets,tests,bin,dist'",
+		"translate:update": "for file in ./languages/*.po; do wp i18n update-po ./languages/ai-image-disclosure.pot \"$file\"; done",
+		"translate:mo": "wp i18n make-mo ./languages ./languages"
+	}
+}
