@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name:       AI Image Disclosure
+ * Plugin Name:       Zirkel AI Image Disclosure
  * Plugin URI:        https://github.com/zirkeldesign/ai-image-disclosure
  * Description:       Label AI-generated images with a small, accessible badge. CSS only, detects IPTC and C2PA provenance on upload.
  * Version:           1.0.0
@@ -9,7 +9,7 @@
  * Author URI:        https://zirkel.design
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       ai-image-disclosure
+ * Text Domain:       zirkel-ai-image-disclosure
  * Domain Path:       /languages
  * Requires PHP:      8.3
  * Requires at least: 6.6
@@ -34,7 +34,7 @@ if (file_exists(AI_IMAGE_DISCLOSURE_DIR.'vendor/autoload.php')) {
 
 /*
  * load_plugin_textdomain() is intentionally not called: WordPress 4.6+ loads
- * `ai-image-disclosure-{locale}.mo` from /languages/ by itself.
+ * `zirkel-ai-image-disclosure-{locale}.mo` from /languages/ by itself.
  */
 add_action('plugins_loaded', static function (): void {
     Plugin::boot();

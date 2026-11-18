@@ -30,7 +30,7 @@ final class Library
      */
     public function columns(array $columns): array
     {
-        $columns['aiid'] = __('AI-generated', 'ai-image-disclosure');
+        $columns['aiid'] = __('AI-generated', 'zirkel-ai-image-disclosure');
 
         return $columns;
     }
@@ -43,7 +43,7 @@ final class Library
 
         printf(
             '<span class="dashicons dashicons-yes" aria-hidden="true"></span><span class="screen-reader-text">%s</span>',
-            esc_html__('Marked as AI-generated', 'ai-image-disclosure')
+            esc_html__('Marked as AI-generated', 'zirkel-ai-image-disclosure')
         );
     }
 
@@ -53,8 +53,8 @@ final class Library
      */
     public function actions(array $actions): array
     {
-        $actions[self::MARK] = __('Mark as AI-generated', 'ai-image-disclosure');
-        $actions[self::UNMARK] = __('Remove AI marking', 'ai-image-disclosure');
+        $actions[self::MARK] = __('Mark as AI-generated', 'zirkel-ai-image-disclosure');
+        $actions[self::UNMARK] = __('Remove AI marking', 'zirkel-ai-image-disclosure');
 
         return $actions;
     }
@@ -95,9 +95,9 @@ final class Library
 
         $message = $mark
             /* translators: %d: number of images */
-            ? _n('%d image marked as AI-generated.', '%d images marked as AI-generated.', $done, 'ai-image-disclosure')
+            ? _n('%d image marked as AI-generated.', '%d images marked as AI-generated.', $done, 'zirkel-ai-image-disclosure')
             /* translators: %d: number of images */
-            : _n('AI marking removed from %d image.', 'AI marking removed from %d images.', $done, 'ai-image-disclosure');
+            : _n('AI marking removed from %d image.', 'AI marking removed from %d images.', $done, 'zirkel-ai-image-disclosure');
 
         printf('<div class="notice notice-success is-dismissible"><p>%s</p></div>', esc_html(sprintf($message, $done)));
     }

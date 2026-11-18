@@ -1,4 +1,4 @@
-=== AI Image Disclosure ===
+=== Zirkel AI Image Disclosure ===
 Contributors: zirkeldesign, d.sturm
 Tags: ai, ai-generated, eu ai act, images, label
 Requires at least: 6.6
@@ -12,7 +12,7 @@ Label AI-generated images with a small, accessible badge. CSS only, and it recog
 
 == Description ==
 
-**AI Image Disclosure** shows a small "AI-generated" label on images you mark in the media library, wherever they appear in a block.
+**Zirkel AI Image Disclosure** shows a small "AI-generated" label on images you mark in the media library, wherever they appear in a block.
 
 = Built differently =
 

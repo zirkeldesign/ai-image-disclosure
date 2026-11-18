@@ -4,6 +4,7 @@ Technical changes for developers. The user-facing changelog is in `readme.txt`.
 
 ## 1.0.0
 
+- Plugin name "Zirkel AI Image Disclosure", slug and text domain `zirkel-ai-image-disclosure`: the wordpress.org directory does not accept generic names. Meta and option keys keep the `aiid` prefix.
 - Attachment meta `_aiid_generated`, `_aiid_position`, `_aiid_source` with fields in the media modal and edit screen, a list view column and two bulk actions.
 - Settings on Settings > Media: `aiid_label`, `aiid_position`, and the toggles `aiid_detect`, `aiid_filename`, `aiid_alt` stored as "1"/"0", because `update_option(false)` on a missing option stores nothing.
 - `Detection\Provenance`: IPTC Digital Source Type in XMP packets and C2PA manifests (JUMBF `jumd` labelled `c2pa`), reading the first 2 MB and the last 256 KB of the file.

@@ -11,7 +11,7 @@
 
 set -euo pipefail
 
-SLUG="ai-image-disclosure"
+SLUG="zirkel-ai-image-disclosure"
 PLUGIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PLUGIN_DIR"
 

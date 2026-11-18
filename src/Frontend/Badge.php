@@ -30,7 +30,7 @@ final class Badge
     {
         // Small and loaded everywhere: enqueued only on a hit, it would print in
         // the footer of a classic theme and the label would flash unstyled.
-        wp_enqueue_style('ai-image-disclosure', AI_IMAGE_DISCLOSURE_URL.'assets/css/badge.css', [], AI_IMAGE_DISCLOSURE_VERSION);
+        wp_enqueue_style('zirkel-ai-image-disclosure', AI_IMAGE_DISCLOSURE_URL.'assets/css/badge.css', [], AI_IMAGE_DISCLOSURE_VERSION);
     }
 
     /**
