@@ -64,9 +64,9 @@
       "composer install --no-dev --optimize-autoloader --quiet",
       "mkdir -p dist",
       "@php get-version.php > .version",
-      "wp dist-archive . dist/ai-image-disclosure-$(cat .version).zip",
+      "wp dist-archive . dist/zirkel-ai-image-disclosure-$(cat .version).zip",
       "composer install --quiet",
-      "@php -r \"echo '✅ Distribution archive created: dist/ai-image-disclosure-' . trim(file_get_contents('.version')) . '.zip\\n'; unlink('.version');\""
+      "@php -r \"echo '✅ Distribution archive created: dist/zirkel-ai-image-disclosure-' . trim(file_get_contents('.version')) . '.zip\\n'; unlink('.version');\""
     ],
     "format": "pint",
     "format:test": "pint --test",

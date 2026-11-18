@@ -1,4 +1,4 @@
-# AI Image Disclosure
+# Zirkel AI Image Disclosure
 
 Labels AI-generated images in WordPress with a small, accessible badge. CSS only, no frontend JavaScript; recognises AI images from IPTC and C2PA metadata on upload. The wordpress.org description is in [readme.txt](readme.txt).
 

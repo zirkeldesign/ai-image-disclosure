@@ -33,14 +33,14 @@ final class Fields
         $name = "attachments[{$post->ID}]";
 
         $fields['aiid_generated'] = [
-            'label' => __('AI-generated', 'ai-image-disclosure'),
+            'label' => __('AI-generated', 'zirkel-ai-image-disclosure'),
             'input' => 'html',
             'html' => sprintf(
                 '<label><input type="checkbox" name="%s[aiid_generated]" value="1"%s> %s</label>',
                 esc_attr($name),
                 checked(Flag::isGenerated($post->ID), true, false),
                 /* translators: %s: label text shown on the image */
-                esc_html(sprintf(__('Show the label "%s" on this image', 'ai-image-disclosure'), Settings::label()))
+                esc_html(sprintf(__('Show the label "%s" on this image', 'zirkel-ai-image-disclosure'), Settings::label()))
             ),
             'helps' => $this->sourceHint($post->ID),
         ];
@@ -48,7 +48,7 @@ final class Fields
         $options = sprintf(
             '<option value="">%s</option>',
             /* translators: %s: the default position, e.g. "Top right" */
-            esc_html(sprintf(__('Default (%s)', 'ai-image-disclosure'), Settings::defaultPosition()->label()))
+            esc_html(sprintf(__('Default (%s)', 'zirkel-ai-image-disclosure'), Settings::defaultPosition()->label()))
         );
 
         foreach (Position::cases() as $position) {
@@ -61,7 +61,7 @@ final class Fields
         }
 
         $fields['aiid_position'] = [
-            'label' => __('Label position', 'ai-image-disclosure'),
+            'label' => __('Label position', 'zirkel-ai-image-disclosure'),
             'input' => 'html',
             'html' => sprintf('<select name="%s[aiid_position]">%s</select>', esc_attr($name), $options),
         ];
@@ -103,14 +103,14 @@ final class Fields
     private function sourceHint(int $id): string
     {
         if (! Flag::isGenerated($id)) {
-            return __('Required for realistic AI images. Ticked automatically on upload when the file declares itself as AI-generated.', 'ai-image-disclosure');
+            return __('Required for realistic AI images. Ticked automatically on upload when the file declares itself as AI-generated.', 'zirkel-ai-image-disclosure');
         }
 
         return match (Flag::source($id)) {
-            'iptc' => __('Ticked on upload: the file declares itself as AI-generated in its IPTC metadata.', 'ai-image-disclosure'),
-            'c2pa' => __('Ticked on upload: the file carries Content Credentials (C2PA) stating AI generation.', 'ai-image-disclosure'),
-            'filename' => __('Ticked on upload because of the file name. Please check.', 'ai-image-disclosure'),
-            default => __('Marked by hand.', 'ai-image-disclosure'),
+            'iptc' => __('Ticked on upload: the file declares itself as AI-generated in its IPTC metadata.', 'zirkel-ai-image-disclosure'),
+            'c2pa' => __('Ticked on upload: the file carries Content Credentials (C2PA) stating AI generation.', 'zirkel-ai-image-disclosure'),
+            'filename' => __('Ticked on upload because of the file name. Please check.', 'zirkel-ai-image-disclosure'),
+            default => __('Marked by hand.', 'zirkel-ai-image-disclosure'),
         };
     }
 }

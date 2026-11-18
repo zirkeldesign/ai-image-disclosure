@@ -24,7 +24,7 @@ final class Settings
     {
         $label = trim((string) get_option(self::LABEL, ''));
 
-        return $label !== '' ? $label : __('AI-generated', 'ai-image-disclosure');
+        return $label !== '' ? $label : __('AI-generated', 'zirkel-ai-image-disclosure');
     }
 
     public static function defaultPosition(): Position
@@ -80,16 +80,16 @@ final class Settings
 
         add_settings_section(
             'aiid',
-            __('AI-generated images', 'ai-image-disclosure'),
+            __('AI-generated images', 'zirkel-ai-image-disclosure'),
             static function (): void {
-                echo '<p>'.esc_html__('Images marked as AI-generated in the media library show a small label wherever they appear in a block.', 'ai-image-disclosure').'</p>';
+                echo '<p>'.esc_html__('Images marked as AI-generated in the media library show a small label wherever they appear in a block.', 'zirkel-ai-image-disclosure').'</p>';
             },
             'media'
         );
 
-        add_settings_field(self::LABEL, __('Label text', 'ai-image-disclosure'), [$this, 'renderLabel'], 'media', 'aiid', ['label_for' => self::LABEL]);
-        add_settings_field(self::POSITION, __('Default position', 'ai-image-disclosure'), [$this, 'renderPosition'], 'media', 'aiid', ['label_for' => self::POSITION]);
-        add_settings_field('aiid_options', __('Options', 'ai-image-disclosure'), [$this, 'renderToggles'], 'media', 'aiid');
+        add_settings_field(self::LABEL, __('Label text', 'zirkel-ai-image-disclosure'), [$this, 'renderLabel'], 'media', 'aiid', ['label_for' => self::LABEL]);
+        add_settings_field(self::POSITION, __('Default position', 'zirkel-ai-image-disclosure'), [$this, 'renderPosition'], 'media', 'aiid', ['label_for' => self::POSITION]);
+        add_settings_field('aiid_options', __('Options', 'zirkel-ai-image-disclosure'), [$this, 'renderToggles'], 'media', 'aiid');
     }
 
     public function renderLabel(): void
@@ -98,8 +98,8 @@ final class Settings
             '<input type="text" id="%1$s" name="%1$s" value="%2$s" class="regular-text" placeholder="%3$s"><p class="description">%4$s</p>',
             esc_attr(self::LABEL),
             esc_attr((string) get_option(self::LABEL, '')),
-            esc_attr__('AI-generated', 'ai-image-disclosure'),
-            esc_html__('Shown on every marked image. Leave empty for the translated default. Keep it plain: the label has to be understood at a glance.', 'ai-image-disclosure')
+            esc_attr__('AI-generated', 'zirkel-ai-image-disclosure'),
+            esc_html__('Shown on every marked image. Leave empty for the translated default. Keep it plain: the label has to be understood at a glance.', 'zirkel-ai-image-disclosure')
         );
     }
 
@@ -116,15 +116,15 @@ final class Settings
             );
         }
 
-        echo '</select><p class="description">'.esc_html__('Applies to every image left on "Default". Changing it moves all of those labels at once.', 'ai-image-disclosure').'</p>';
+        echo '</select><p class="description">'.esc_html__('Applies to every image left on "Default". Changing it moves all of those labels at once.', 'zirkel-ai-image-disclosure').'</p>';
     }
 
     public function renderToggles(): void
     {
         $toggles = [
-            self::DETECT => [self::detectOnUpload(), __('Mark uploads whose file declares itself as AI-generated (IPTC or C2PA)', 'ai-image-disclosure')],
-            self::FILENAME => [self::detectByFilename(), __('Also mark uploads whose file name contains "ai" as a word of its own', 'ai-image-disclosure')],
-            self::ALT => [self::appendToAlt(), __('Add the label to the alternative text, so screen readers announce it', 'ai-image-disclosure')],
+            self::DETECT => [self::detectOnUpload(), __('Mark uploads whose file declares itself as AI-generated (IPTC or C2PA)', 'zirkel-ai-image-disclosure')],
+            self::FILENAME => [self::detectByFilename(), __('Also mark uploads whose file name contains "ai" as a word of its own', 'zirkel-ai-image-disclosure')],
+            self::ALT => [self::appendToAlt(), __('Add the label to the alternative text, so screen readers announce it', 'zirkel-ai-image-disclosure')],
         ];
 
         echo '<fieldset>';

@@ -30,8 +30,8 @@ wp config create --path="$WPDIR" --dbname=wp --dbuser=root --dbpass='' --skip-ch
 wp core install --path="$WPDIR" --url=http://localhost --title=AIID \
   --admin_user=admin --admin_password=admin --admin_email=a@b.test --skip-email >/dev/null
 
-ln -s "$PLUGIN_DIR" "$WPDIR/wp-content/plugins/ai-image-disclosure"
-wp plugin activate ai-image-disclosure --path="$WPDIR" >/dev/null
+ln -s "$PLUGIN_DIR" "$WPDIR/wp-content/plugins/zirkel-ai-image-disclosure"
+wp plugin activate zirkel-ai-image-disclosure --path="$WPDIR" >/dev/null
 
 echo "🔎 Running checks ..."
 wp eval-file "$PLUGIN_DIR/bin/integration-check.php" --path="$WPDIR" --user=admin 2>&1 | grep -v -E '^(Deprecated|PHP Deprecated)'

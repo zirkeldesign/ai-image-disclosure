@@ -14,10 +14,10 @@ enum Position: string
     public function label(): string
     {
         return match ($this) {
-            self::TopRight => __('Top right', 'ai-image-disclosure'),
-            self::TopLeft => __('Top left', 'ai-image-disclosure'),
-            self::BottomRight => __('Bottom right', 'ai-image-disclosure'),
-            self::BottomLeft => __('Bottom left', 'ai-image-disclosure'),
+            self::TopRight => __('Top right', 'zirkel-ai-image-disclosure'),
+            self::TopLeft => __('Top left', 'zirkel-ai-image-disclosure'),
+            self::BottomRight => __('Bottom right', 'zirkel-ai-image-disclosure'),
+            self::BottomLeft => __('Bottom left', 'zirkel-ai-image-disclosure'),
         };
     }
 }
