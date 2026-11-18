@@ -67,6 +67,14 @@ Clear your page cache first. Then check that the image is shown in one of the su
 
 No. It does not connect to any external service.
 
+= Where do I report a security issue? =
+
+Please do not post it in an issue or the support forum. Report it privately through [GitHub security advisories](https://github.com/zirkeldesign/ai-image-disclosure/security/advisories/new). We confirm receipt, fix it, and credit you in the changelog unless you prefer not to be named.
+
+= Found a bug or have an idea? =
+
+Please open an issue on [GitHub](https://github.com/zirkeldesign/ai-image-disclosure/issues).
+
 == Screenshots ==
 
 1. The label on a cover block.
