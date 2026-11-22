@@ -2,9 +2,9 @@
 Contributors: zirkeldesign, d.sturm
 Tags: ai, ai-generated, eu ai act, images, label
 Requires at least: 6.6
-Tested up to: 7.1
+Tested up to: 7.2
 Requires PHP: 8.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,13 @@ Label AI-generated images with a small, accessible badge. CSS only, and it recog
 The label reads a few custom properties, which you can set in your theme:
 
 `.has-aiid-badge { --aiid-bg: #000; --aiid-color: #fff; --aiid-font-size: .875rem; --aiid-radius: 0; --aiid-gap: 1rem; }`
+
+= More from zirkel.design =
+
+* [Course Embed for Viona](https://wordpress.org/plugins/course-embed-for-viona/): embed the Viona course list of your IBB partner account with a block or a shortcode.
+* [Privacy CAPTCHA for Cap](https://wordpress.org/plugins/privacy-captcha-for-cap/): privacy-friendly spam protection for login, comments, WooCommerce and form plugins, verified against your own Cap server.
+* [Regex Validation for Gravity Forms](https://wordpress.org/plugins/regex-validation-for-gravity-forms/): regular expression validation for Gravity Forms fields, with Unicode support and ready-made presets.
+* [Zirkel Virtual IBAN for WooCommerce](https://wordpress.org/plugins/zirkel-iban-for-woocommerce/): unique virtual bank details per order for bank transfers in WooCommerce, reconciled automatically via Stripe.
 
 == Installation ==
 
@@ -82,6 +89,9 @@ Please open an issue on [GitHub](https://github.com/zirkeldesign/ai-image-disclo
 3. The settings under Settings > Media.
 
 == Changelog ==
+
+= 1.0.1 =
+* Improved: tested and confirmed compatible with WordPress 7.2.
 
 = 1.0.0 =
 * Added: Label for AI-generated images in Image, Cover, Media & Text and Post Featured Image blocks.
