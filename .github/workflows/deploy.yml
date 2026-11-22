@@ -1,0 +1,43 @@
+name: Deploy to WordPress.org
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write # attach the built zip to the release
+
+jobs:
+  deploy:
+    name: Deploy to WordPress.org
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # The plugin loads vendor/autoload.php, so the package needs the production autoloader.
+      - name: Install production dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
+
+      - name: WordPress Plugin Deploy
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        # generate-zip is an input: as an env var it is silently ignored and zip-path comes back empty.
+        with:
+          generate-zip: true
+        env:
+          SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+          SLUG: zirkel-ai-image-disclosure
+
+      # Without this the Releases page only offers GitHub's source archive, which is not an installable plugin.
+      - name: Attach the built zip to the release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ZIP: ${{ steps.deploy.outputs.zip-path }}
+        run: |
+          if [ -z "$ZIP" ] || [ ! -f "$ZIP" ]; then
+            echo "::error::The deploy action produced no zip (zip-path='$ZIP'). Check that generate-zip is set under with:."
+            exit 1
+          fi
+          gh release upload "${{ github.event.release.tag_name }}" "$ZIP" --clobber
