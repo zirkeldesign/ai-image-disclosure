@@ -25,3 +25,6 @@ node_modules/
 .DS_Store
 dist/*.zip
 .wordpress-org/
+# translate.wordpress.org ships the translations; the review asked to leave them out of the package
+languages/*.po
+languages/*.mo
