@@ -4,7 +4,7 @@
  * Plugin Name:       Zirkel AI Image Disclosure
  * Plugin URI:        https://github.com/zirkeldesign/ai-image-disclosure
  * Description:       Label AI-generated images with a small, accessible badge. CSS only, detects IPTC and C2PA provenance on upload.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            zirkel.design
  * Author URI:        https://zirkel.design
  * License:           GPL-2.0-or-later
@@ -23,7 +23,7 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-define('AI_IMAGE_DISCLOSURE_VERSION', '1.0.0');
+define('AI_IMAGE_DISCLOSURE_VERSION', '1.0.1');
 define('AI_IMAGE_DISCLOSURE_FILE', __FILE__);
 define('AI_IMAGE_DISCLOSURE_DIR', plugin_dir_path(__FILE__));
 define('AI_IMAGE_DISCLOSURE_URL', plugin_dir_url(__FILE__));

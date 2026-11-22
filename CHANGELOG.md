@@ -2,6 +2,10 @@
 
 Technical changes for developers. The user-facing changelog is in `readme.txt`.
 
+## 1.0.1
+
+- Tested with WordPress 7.2. Verified against WordPress 7.2 RC1: Pint, PHPStan, 23 unit tests and Plugin Check on the built zip (0 errors, 0 warnings); upload detection through the client-side media pipeline and the badge on the frontend, including the scaled image.
+
 ## 1.0.0
 
 - Plugin name "Zirkel AI Image Disclosure", slug and text domain `zirkel-ai-image-disclosure`: the wordpress.org directory does not accept generic names. Meta and option keys keep the `aiid` prefix.
